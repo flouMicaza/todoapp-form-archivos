@@ -15,11 +15,13 @@ Vamos a agregar un campo para poner archivos adjuntos a una Task y luego podremo
 
 En Django los archivos se guardarán en la carpeta MEDIA. 
 Para esto hay que ir a todoapp/settings.py y agregar las siguientes líneas al final del archivo para crear las carpetas donde irá MEDIA:
-    
-    ```python
+
+
+     ```python
         MEDIA_URL = '/media/'
         MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     ```
+  
   
 Para que un usuario pueda acceder al archivo adjunto a través de una url habrá que habilitar las urls para el contenido de MEDIA, para esto haremos los siguientes pasos: 
     
