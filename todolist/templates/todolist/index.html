@@ -21,7 +21,7 @@
                 <h2>Usuaria: {{ user.apodo }}</h2>
             </div>
         </div>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %} <!-- csrf token for basic security -->
                 <h2>Agregar tarea</h2>
                 <div id="primera-parte" style="border: 1px solid rgba(0,0,0,.125); padding:1em">
@@ -44,6 +44,12 @@
                         <label for="dueDate">Due Date</label>
                         <input type="date" id="dueDate" class="" name="date">
                     </div>
+                    <!--Input para un archivo!-->
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Elegir archvo</label>
+                        <input name="adjunto" type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    <!--Fin input archivo!-->
 
                     <button class="btn btn-primary" name="taskAdd" type="submit"><i class="fa fa-plus icon"></i>Add task</button>
                     <button class="btn btn-danger" name="taskDelete" formnovalidate="" type="submit" onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
@@ -58,6 +64,11 @@
                                 <label for="{{ todo.id }}"><span class="complete-">{{ todo.title }}</span></label>
                                 <span class="badge badge-info">{{ todo.category }}</span>
                                 <p ><i class="fa fa-calendar"></i>{{ todo.created }} - {{ todo.due_date }}</p>
+
+                                <!--Verificamos si hay un archivo adjunto y dejamos el botón para descargar -->
+                                {% if todo.adjunto %}
+                                    <a class="btn btn-primary" href="{{ todo.adjunto.url }}">Descargar</a>
+                                {% endif %}
                             </li>
                         {% endfor %}
                     </ul><!-- taskList -->

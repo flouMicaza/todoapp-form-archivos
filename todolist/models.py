@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import FileExtensionValidator
 
 
 class User(AbstractUser):
@@ -22,6 +23,8 @@ class Task(models.Model): #Todolist able name that inherits models.Model
     due_date = models.DateField(default=timezone.now().strftime("%Y-%m-%d")) # a date
     category = models.ForeignKey(Category, default="general", on_delete=models.SET_DEFAULT) # a foreignkey
     owner = models.ForeignKey(User,blank=True,null=True, on_delete=models.CASCADE)
+    adjunto = models.FileField(upload_to='adjuntos', blank=True, null=True,
+                               validators=[FileExtensionValidator(['json', 'csv'])])
 
     class Meta:
         ordering = ["-created"] #ordering by the created field
