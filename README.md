@@ -2,6 +2,14 @@
 ![Pantallazo resultado final app](app_final.jpg)
 Vamos a agregar un campo para poner archivos adjuntos a una Task y luego podremos descargar el archivo con un botón. 
 
+>Para correr este proyecto tienen que clonarlo en su computador, hacer 
+>
+>`$ pip install -r requirements.txt`
+>
+>`$ python manage.py migrate` 
+>
+>`$ python manage.py runserver`. 
+
 ## Preparar el proyecto para soportar archivos. 
 > Antes de empezar a trabajar con archivos tenemos que configurar el proyecto para poder guardarlos y poder mostrarlos después en una url. 
 
