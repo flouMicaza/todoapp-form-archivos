@@ -92,7 +92,9 @@ La idea es que se pueda adjuntar un archivo a una Task, y luego al mostrar la Ta
     {% endif %}
     ```
     Este código verificará si hay un archivo adjunto en la task y creará un botón que dirige a la url de la Task. 
-    
+   
+Con estos pasos ya se debería poder agregar archivos a través de un formulario y ver los archivos después en un template. 
+
 ### Validar el tipo de archivo. 
 La validación del tipo de archivo que se está adjuntando puede ir en diferentes capas de la aplicación. 
 
