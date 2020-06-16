@@ -14,7 +14,7 @@ Vamos a agregar un campo para poner archivos adjuntos a una Task y luego podremo
 > Antes de empezar a trabajar con archivos tenemos que configurar el proyecto para poder guardarlos y poder mostrarlos después en una url. 
 
 En Django los archivos se guardarán en la carpeta MEDIA. 
-Para esto hay que ir a settings.py y agregar las siguientes líneas para crear las carpetas donde irá MEDIA:
+Para esto hay que ir a todoapp/settings.py y agregar las siguientes líneas para crear las carpetas donde irá MEDIA:
     
     ```python
     MEDIA_URL = '/media/'
